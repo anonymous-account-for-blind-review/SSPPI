@@ -163,7 +163,7 @@ Recent advances have shown great promise in mining multi-modal protein knowledge
    ```
 
 ## Cancer cases
-The complete data for the case study on cancer signaling pathways can be downloaded from the link. After downloading, please place the file in the `data` directory.
+The complete data for the case study on cancer signaling pathways can be downloaded from the [link](https://pan.baidu.com/s/1WZ_cdP8hDuiqB1raMWtSog?pwd=jzey). After downloading, please place the file in the `data` directory.
 
 After obtaining the complete data, you can execute the following commands to reproduce the experimental results of our paper:
    ```text
