@@ -79,6 +79,18 @@ Recent advances have shown great promise in mining multi-modal protein knowledge
   For Multi-species dataset:
     python my_main.py --datasetname multi_species --output_dim 1 --identity any
 
+    python my_main.py --datasetname multi_species --output_dim 1 --identity 01
+
+    python my_main.py --datasetname multi_species --output_dim 1 --identity 10
+
+    python my_main.py --datasetname multi_species --output_dim 1 --identity 25
+
+    python my_main.py --datasetname multi_species --output_dim 1 --identity 40
+
+    python my_main.py --datasetname multi_species --output_dim 1 --identity s1 --mode cold
+  
+    python my_main.py --datasetname multi_species --output_dim 1 --identity s2 --mode cold
+
   For Multi-class dataset:
     python my_main.py --datasetname multi_class --output_dim 7  
 
@@ -122,7 +134,7 @@ Recent advances have shown great promise in mining multi-modal protein knowledge
    
       python inference.py --datasetname multi_species --output_dim 1 --identity 40 --device_id 1  ## Test the performance of the SSPPI model on the Multi-species dataset under '40' condition
 
-      python inference.py --datasetname multi_species --output_dim 1 --identity s2 --device_id 1  ## Test the performance of the SSPPI model on the Multi-species dataset under 'cold start s1' condition
+      python inference.py --datasetname multi_species --output_dim 1 --identity s1 --device_id 1  ## Test the performance of the SSPPI model on the Multi-species dataset under 'cold start s1' condition
 
       python inference.py --datasetname multi_species --output_dim 1 --identity s2 --device_id 1  ## Test the performance of the SSPPI model on the Multi-species dataset under 'cold start s2' condition
 
