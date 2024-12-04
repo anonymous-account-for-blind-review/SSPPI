@@ -20,7 +20,7 @@ A repo for "SSPPI: Cross-modality enhanced protein-protein interaction predictio
 ## Abstracts
 Recent advances have shown great promise in mining multi-modal protein knowledge for better protein-protein interaction (PPI) prediction by enriching the representation of proteins. However, existing solutions lack a comprehensive consideration of both local patterns and global dependencies in proteins, hindering the full exploitation of modal information. Additionally, the inherent disparities between modalities are often disregarded, which may lead to inferior modality complementarity effects. To address these issues, we propose a cross-modality enhanced PPI prediction method from the perspectives of protein Sequence and Structure modalities, namely `SSPPI`. In this framework, our main contribution is that we integrate both sequence and structural modalities of proteins and employ an alignment and fusion method between modalities to further generate more comprehensive protein representations for PPI prediction. Specifically, we design two modal representation modules (`Convformer` and `Graphormer`) tailored for protein sequence and structure modalities, respectively, to enhance the quality of modal representation. Subsequently, we introduce a `Cross-modality enhancer` module to achieve alignment and fusion between modalities, thereby generating more informative modal joint representations. Finally, we devise a `Cross-protein fusion` module to model residue interaction processes between proteins, thereby enriching the joint representation of protein pairs. Extensive experimentation on three benchmark datasets demonstrates that our proposed model surpasses all current state-of-the-art (SOTA) methods in PPI prediction performance.
 
-![SSPPI architecture](https://github.com/bixiangpeng/SSPPI/blob/main/framework.png)
+![SSPPI architecture](https://github.com/anonymous-account-for-blind-review/SSPPI/blob/main/framework.png)
 
 
 ## Requirements
@@ -46,9 +46,9 @@ Recent advances have shown great promise in mining multi-modal protein knowledge
     We also provide the Dockerfile to build the environment, please refer to the Dockerfile for more details. Make sure you have Docker installed locally, and simply run following command:
    ```shell
    # Build the Docker image
-   sudo docker build --build-arg env_name=HiSIF -t hisif-image:v1 .
+   sudo docker build --build-arg env_name=SSPPI -t ssppi-image:v1 .
    # Create and start the docker container
-   sudo docker run --name hisif-con --gpus all -it hisif-image:v1 /bin/bash
+   sudo docker run --name ssppi-con --gpus all -it ssppi-image:v1 /bin/bash
    # Check whether the environment deployment is successful
    conda list 
    ```
@@ -122,18 +122,31 @@ Recent advances have shown great promise in mining multi-modal protein knowledge
   * ### Reproduce the results with single command
    To facilitate the reproducibility of our experimental results, we have provided a Docker Image-based solution that allows for reproducing our experimental results on multiple datasets with just a single command. You can easily experience this function with the following simple command：
   ```text
-  sudo docker run --name hisif-con --gpus all --shm-size=2g -v /your/local/path/HiSIF-DTA/:/media/HiSIF-DTA -it hisif-image:v1
+  sudo docker run --name ssppi-con --gpus all --shm-size=2g -v /your/local/path/SSPPI/:/media/SSPPI -it ssppi-image:v1
 
   # docker run ：Create and start a new container based on the specified image.
-  # --name : It specifies the name ("hisif-con") for the container being created. You can use this name to reference and manage the container later.
+  # --name : It specifies the name ("ssppi-con") for the container being created. You can use this name to reference and manage the container later.
   # --gpus : It enables GPU support within the container and assigns all available GPUs to it. This allows the container to utilize the GPU resources for computation.
-  # -v : This is a parameter used to map local files to the container,and it is used in the following format: `-v /your/local/path/HiSIF-DTA:/mapped/container/path/HiSIF-DTA`
+  # -v : This is a parameter used to map local files to the container,and it is used in the following format: `-v /your/local/path/SSPPI:/mapped/container/path/SSPPI`
   # -it : These options are combined and used to allocate a pseudo-TTY and enable interactive mode, allowing the user to interact with the container's command-line interface.
-  # hisif-image:v1 : It is a doker image, builded from Dockerfile. For detailed build instructions, please refer to the `Requirements` section.
+  # ssppi-image:v1 : It is a doker image, builded from Dockerfile. For detailed build instructions, please refer to the `Requirements` section.
   ```
   :bulb: Please note that the above one-click run is only applicable for the inference process and requires you to pre-place all the necessary processed data and pretrained models in the correct locations on your local machine. If you want to train the model in the created Docker container, please follow the instructions below:
    ```text
-   1. sudo docker run --name hisif-con --gpus all --shm-size=16g -v /your/local/path/HiSIF-DTA/:/media/HiSIF-DTA -it hisif-image:v1 /bin/bash
-   2. cd /media/HiSIF-DTA
-   3. python training_for_DTA.py --dataset davis --model TDNet
+   1. sudo docker run --name ssppi-con --gpus all --shm-size=16g -v /your/local/path/SSPPI/:/media/SSPPI -it ssppi-image:v1 /bin/bash
+   2. cd /media/SSPPI
+   3. python my_main.py --datasetname yeast --output_dim 1
+   ```
+
+## Cancer cases
+The complete data for the case study on cancer signaling pathways can be downloaded from the link. After downloading, please place the file in the `data` directory.
+
+After obtaining the complete data, you can execute the following commands to reproduce the experimental results of our paper:
+   ```text
+    For one-core signal pathway:
+      python cancer_case_study.py --datasetname cancer-onecore
+  
+    For crossover signal pathway:
+      python cancer_case_study.py --datasetname cancer-crossover
+
    ```
