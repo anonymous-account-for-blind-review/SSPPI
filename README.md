@@ -41,7 +41,7 @@ Recent advances have shown great promise in mining multi-modal protein knowledge
    :bulb: Note that the operating system we used is `ubuntu 22.04` and the version of Anaconda is `23.3.1`.
 
 
-* ### Docker Image
+* ### Docker Image (Configure the environment automatically)
 
     We also provide the Dockerfile to build the environment, please refer to the Dockerfile for more details. Make sure you have Docker installed locally, and simply run following command:
    ```shell
