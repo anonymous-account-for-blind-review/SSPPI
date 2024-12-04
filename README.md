@@ -27,7 +27,7 @@ Recent advances have shown great promise in mining multi-modal protein knowledge
 
 * ### Download projects
 
-   Download the GitHub repo of this project onto your local server: `git clone https://github.com/bixiangpeng/SSPPI`
+   Download the GitHub repo of this project onto your local server: `git clone https://github.com/anonymous-account-for-blind-review/SSPPI`
 
 
 * ### Configure the environment manually
