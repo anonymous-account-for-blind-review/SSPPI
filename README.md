@@ -9,7 +9,7 @@ A repo for "SSPPI: Cross-modality Enhanced Protein-protein Interaction Predictio
 * [Requirements](#requirements)
    * [Download projects](#download-projects)
    * [Configure the environment manually](#configure-the-environment-manually)
-   * [Docker Image](#docker-image)
+   * [Docker Image (Configure the environment automatically)](#docker-image)
 * [Usages](#usages)
    * [Data preparation](#data-preparation)
    * [Training](#training)
