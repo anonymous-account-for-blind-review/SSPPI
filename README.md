@@ -77,15 +77,15 @@ Recent advances have shown great promise in mining multi-modal protein knowledge
     python my_main.py --datasetname yeast --output_dim 1
 
   For Multi-species dataset:
-    python my_main.py --datasetname multi_species --output_dim 1 --identity any
+    python my_main.py --datasetname multi_species --output_dim 1 --identity any --mode warm
 
-    python my_main.py --datasetname multi_species --output_dim 1 --identity 01
+    python my_main.py --datasetname multi_species --output_dim 1 --identity 01 --mode warm
 
-    python my_main.py --datasetname multi_species --output_dim 1 --identity 10
+    python my_main.py --datasetname multi_species --output_dim 1 --identity 10 --mode warm
+ 
+    python my_main.py --datasetname multi_species --output_dim 1 --identity 25 --mode warm
 
-    python my_main.py --datasetname multi_species --output_dim 1 --identity 25
-
-    python my_main.py --datasetname multi_species --output_dim 1 --identity 40
+    python my_main.py --datasetname multi_species --output_dim 1 --identity 40 --mode warm
 
     python my_main.py --datasetname multi_species --output_dim 1 --identity s1 --mode cold
   
