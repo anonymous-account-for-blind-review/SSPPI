@@ -39,7 +39,7 @@ wait
 
 echo "********************************************************"
 echo "Test the performance of the SSPPI model on the Multi-species dataset under 'cold start s1' condition"
-python inference.py --datasetname multi_species --output_dim 1 --identity s2 --device_id 1
+python inference.py --datasetname multi_species --output_dim 1 --identity s1 --device_id 1
 wait
 
 echo "********************************************************"
