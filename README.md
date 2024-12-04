@@ -119,7 +119,7 @@ Recent advances have shown great promise in mining multi-modal protein knowledge
 
    ```
 
-  * ### Reproduce the results with single command
+* ### Reproduce the results with single command
    To facilitate the reproducibility of our experimental results, we have provided a Docker Image-based solution that allows for reproducing our experimental results on multiple datasets with just a single command. You can easily experience this function with the following simple command：
   ```text
   sudo docker run --name ssppi-con --gpus all --shm-size=2g -v /your/local/path/SSPPI/:/media/SSPPI -it ssppi-image:v1
